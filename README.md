@@ -1,2 +1,2 @@
 # vending-machine
-A small website for Tomer presentation
+A quick website for Tomer's presentation
