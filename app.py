@@ -43,7 +43,7 @@ def dashboard():
             },
             {
                 "id": "SM-002",
-                "location": "Istanbul, Türkiye",
+                "location": "Kastamonu, Türkiye",
                 "status": "Pasif",
                 "temperature": "N/A",
                 "stock": [
@@ -65,7 +65,7 @@ def dashboard():
             },
             {
                 "id": "SM-004",
-                "location": "Konya, Türkiye",
+                "location": "Istanbul, Türkiye",
                 "status": "Aktif",
                 "temperature": "20°C",
                 "stock": [
