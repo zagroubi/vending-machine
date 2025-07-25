@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align:center; margin-bottom:2rem;">Otomatlar Kontrol Paneli</h1>
+
+        {% for machine in machines %}
+        <div class="card">
+            <h2 class="machine-title">Otomat {{ machine.id }} - {{ machine.location }}</h2>
+            <div class="info-grid">
+                <div class="info-box"><strong>Kimlik:</strong> {{ machine.id }}</div>
+                <div class="info-box"><strong>Konum:</strong> {{ machine.location }}</div>
+                <div class="info-box">
+                    <strong>Durum:</strong>
+                    <span class="status {{ 'online' if machine.status == 'Aktif' else 'offline' }}">
+                        {{ machine.status }}
+                    </span>
+                </div>
+                <div class="info-box"><strong>Sıcaklık:</strong> {{ machine.temperature }}</div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ürün</th>
+                        <th>Stok</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in machine.stock %}
+                    <tr>
+                        <td>{{ item.item }}</td>
+                        <td class="{{ 'low-stock' if item.count <= 5 else '' }}">{{ item.count }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
