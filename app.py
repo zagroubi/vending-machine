@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 
-app.secret_key = os.getenv("SECRET-KEY") or "supersecurepassword"
+app.secret_key = os.getenv("SECRET-KEY") or "youwillneverguess"
 
 @app.route("/index")
 @app.route("/")
