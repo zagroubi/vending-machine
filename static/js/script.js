@@ -28,6 +28,9 @@ L.marker([40.18750751770577, 29.12998971054061]).addTo(map)
 .bindPopup('Otomat BTU')
 .openPopup();
 
+L.marker([41.37599722941076, 33.76516619501857]).addTo(map)
+.bindPopup('Otomat Kastamonu');
+
 L.marker([40.18681621887534, 29.1030216970482]).addTo(map)
 .bindPopup('Otomat BTU Yildirim');
 
