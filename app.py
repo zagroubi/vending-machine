@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, session, redirect, abort, url_for
+import os
 
 app = Flask(__name__)
 
-app.secret_key = "iloveyou"
+app.secret_key = os.getenv("SECRET-KEY") or "supersecurepassword"
 
 @app.route("/index")
 @app.route("/")
