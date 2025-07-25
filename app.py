@@ -16,7 +16,7 @@ def admin():
         username = request.form.get("username")
         password = request.form.get("password")
 
-        if username == "admin" and password == "admin":
+        if username == "admin" and password == "supersecurepassword":
             session['isadmin'] = True
             return redirect(url_for("dashboard"))
         else:
