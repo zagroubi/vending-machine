@@ -16,10 +16,14 @@ def admin():
         username = request.form.get("username")
         password = request.form.get("password")
 
+        session['username'] = username
+        session['password'] = password
+
         if username == "admin" and password == "supersecurepassword":
             session['isadmin'] = True
             return redirect(url_for("dashboard"))
         else:
+            session['isadmin'] = False
             return render_template("login.html", error="Invalid credentials.")
 
     else:
