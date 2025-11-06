@@ -19,7 +19,7 @@ def admin():
         session['username'] = username
         session['password'] = password
 
-        if username == "admin" and password == "supersecurepassword":
+        if username == "admin" and password == "secret":
             session['isadmin'] = True
             return redirect(url_for("dashboard"))
         else:
